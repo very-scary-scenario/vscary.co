@@ -1,6 +1,11 @@
-@bg: #2C022C;
-@fg: #875287;
-@hl: #592059;
+@base: #592059;
+@complement: #76852F;
+@neutral: #fff;
+
+@bg: darken(@base, 25);
+@anchor: lighten(@base, 5);
+@head: lighten(@complement, 5);
+@fg: fadeout(@neutral, 50);
 
 * {
   border: none;
@@ -13,11 +18,15 @@
 
 a {
   text-decoration: none;
-  color: @hl;
+  color: @anchor;
 
   &:hover {
     color: @fg;
   }
+}
+
+h1, h2, h3, h4, h5 {
+  color: @head;
 }
 
 body {
