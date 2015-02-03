@@ -7,6 +7,8 @@
 @head: lighten(@complement, 5);
 @fg: fadeout(@neutral, 50);
 
+@avatar-size: 4rem;
+
 * {
   border: none;
   margin: 0;
@@ -68,10 +70,28 @@ body {
 
   #staff {
     > ul > li {
-      p {
-        margin: .2em 0 .5em;
+      padding-left: @avatar-size;
+
+      &::before {
+        content: ' ';
+        margin-top: .7em;
+        width: @avatar-size;
+        height: @avatar-size;
+        border-radius: @avatar-size/2;
+        background-image: url('staff/colons.jpg');
+        background-size: @avatar-size;
+        margin-left: -@avatar-size;
+        float: left;
       }
 
+      > * {
+        margin-left: 1rem;
+      }
+
+      p {
+        margin-top: .2em;
+        margin-bottom: .5em;
+      }
 
       .contact {
         span {
@@ -82,7 +102,7 @@ body {
         }
       }
 
-      @media (min-width: 40em) {
+      @media (min-width: 50em) {
         display: inline-block;
         width: 49%;
         vertical-align: top;
