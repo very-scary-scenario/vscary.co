@@ -1,3 +1,7 @@
+@bg: #222;
+@fg: #fafafa;
+@hl: #0c6cef;
+
 * {
   border: none;
   margin: 0;
@@ -6,16 +10,16 @@
 
 a {
   text-decoration: none;
-  color: #0C6CEF;
+  color: @hl;
 
   &:hover {
-    color: #fafafa;
+    color: @fg;
   }
 }
 
 body {
-  background-color: #222;
-  color: #fafafa;
+  background-color: @bg;
+  color: @fg;
   font-family: Lato, sans-serif;
   font-weight: 400;
 
