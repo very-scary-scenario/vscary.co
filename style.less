@@ -78,11 +78,14 @@ body {
         width: @avatar-size;
         height: @avatar-size;
         border-radius: @avatar-size/2;
-        background-image: url('staff/colons.jpg');
         background-size: @avatar-size;
         margin-left: -@avatar-size;
         float: left;
+        background-color: fadeout(@fg, 30);
       }
+
+      &#colons::before{background-image: url('staff/colons.jpg')}
+      &#shillito::before{background-image: url('staff/peter.png')}
 
       > * {
         margin-left: 1rem;
