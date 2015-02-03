@@ -3,7 +3,7 @@
 @neutral: #fff;
 
 @bg: darken(@base, 25);
-@anchor: lighten(@base, 5);
+@anchor: lighten(@base, 15);
 @head: lighten(@complement, 5);
 @fg: fadeout(@neutral, 50);
 
@@ -25,10 +25,6 @@ a {
   }
 }
 
-h1, h2, h3, h4, h5 {
-  color: @head;
-}
-
 body {
   background-color: @bg;
   color: @fg;
@@ -36,6 +32,18 @@ body {
   font-weight: 400;
   max-width: 60em;
   margin: 0 auto;
+
+  h1, h2, h3, h4, h5 {
+    color: @head;
+  }
+
+  h1, h2 {
+    font-weight: 100;
+  }
+
+  h3, h4, h5 {
+    font-weight: 300;
+  }
 
   header, section {
     margin: 2rem;
@@ -85,13 +93,5 @@ body {
         }
       }
     }
-  }
-
-  h2 {
-    font-weight: 100;
-  }
-
-  h3 {
-    font-weight: 700;
   }
 }
