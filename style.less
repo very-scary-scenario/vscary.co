@@ -6,6 +6,9 @@
   border: none;
   margin: 0;
   padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+
 }
 
 a {
@@ -24,7 +27,7 @@ body {
   font-weight: 400;
 
   header, section {
-    padding: 2rem;
+    margin: 2rem;
   }
 
   header {
@@ -35,6 +38,41 @@ body {
     p {
       font-weight: 300;
       padding: 0 0.3em;
+    }
+  }
+
+  #staff {
+    > ul > li {
+      margin: .5em 0;
+
+      p {
+        margin: .2em 0 .5em;
+      }
+
+
+      .contact {
+        span {
+          font-size: 1.5em;
+          display: inline-block;
+          vertical-align: middle;
+          margin-right: .3em;
+        }
+      }
+
+      @media (min-width: 40em) {
+        display: inline-block;
+        width: 49%;
+        vertical-align: top;
+
+        &:nth-child(2n) {
+          float: right;
+        }
+
+        &:nth-child(2n+1) {
+          clear: both;
+          float: left;
+        }
+      }
     }
   }
 
