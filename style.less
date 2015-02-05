@@ -45,7 +45,7 @@ a {
 body {
   background-color: @bg;
   color: @fg;
-  font-family: Lato, sans-serif;
+  font-family: 'Exo 2', sans-serif;
   font-weight: 400;
   max-width: 60em;
   margin: 0 auto 2em;
@@ -53,13 +53,13 @@ body {
   h1, h2, h3, h4, h5 {
     color: @head;
   }
-
+  
   h1, h2 {
-    font-weight: 100;
+    font-weight: 200;
   }
 
   h3, h4, h5 {
-    font-weight: 300;
+    font-weight: 400;
   }
 
   header, section {
@@ -70,12 +70,21 @@ body {
 
   header {
     h1 {
-      font-weight: 100;
-      font-size: 2.5em;
+      font-size: 4em;
+      @media (max-width: 40em) {
+        font-size: 9.2vw;
+      }
     }
     p {
-      font-weight: 300;
-      padding: 0 0.3em;
+      font-size: 1.2em;
+      padding: 0.3rem 0.6em;
+
+      @media (max-width: 40em) {
+        font-size: 1em;
+        padding-left: .3em;
+      }
+
+      @media (max-width: 30em) {padding-left: 0}
     }
   }
 
