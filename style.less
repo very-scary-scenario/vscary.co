@@ -10,13 +10,27 @@
 @avatar-size: 4rem;
 @project-radius: .5em;
 
+.clearfix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+.icon {
+  font-size: 1.5em !important;
+  display: inline-block;
+  vertical-align: -15%;
+  margin-right: .3em;
+}
+
 * {
   border: none;
   margin: 0;
   padding: 0;
   list-style: none;
   box-sizing: border-box;
-
 }
 
 a {
@@ -34,7 +48,7 @@ body {
   font-family: Lato, sans-serif;
   font-weight: 400;
   max-width: 60em;
-  margin: 0 auto;
+  margin: 0 auto 2em;
 
   h1, h2, h3, h4, h5 {
     color: @head;
@@ -49,7 +63,9 @@ body {
   }
 
   header, section {
+    .clearfix;
     margin: 2rem 5%;
+    clear: both;
   }
 
   header {
@@ -121,6 +137,7 @@ body {
       &#ggj15 > a {background-image: url('games/business.jpg')}
     }
   }
+
   #staff {
     > ul > li {
       padding-left: @avatar-size;
@@ -154,10 +171,7 @@ body {
 
       .contact {
         span {
-          font-size: 1.5em;
-          display: inline-block;
-          vertical-align: middle;
-          margin-right: .3em;
+          .icon;
         }
       }
 
@@ -174,6 +188,17 @@ body {
           clear: both;
           float: left;
         }
+      }
+    }
+  }
+
+  footer {
+    text-align: center;
+    margin-bottom: 3em;
+
+    li {
+      span {
+        .icon;
       }
     }
   }
