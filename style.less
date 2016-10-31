@@ -12,6 +12,8 @@
 @avatar-size: 4rem;
 @project-depth: 30%;
 
+@big-break: 50rem;
+
 * {
   border: none;
   margin: 0;
@@ -38,7 +40,7 @@ header {
   color: @bg;
   background-color: @complement;
   text-align: center;
-  padding: @logo-scale 0;
+  padding: @logo-scale .5em;
 
   #logo {
     font-size: @logo-scale;
@@ -85,6 +87,10 @@ header {
 }
 
 section#work {
+  @media (max-width: @big-break) {
+    font-size: 1.3em;
+  }
+
   font-size: 1.5em;
 
   article {
@@ -92,7 +98,7 @@ section#work {
 
     > * {
       display: block;
-      max-width: 50rem;
+      max-width: @big-break;
       margin: 2rem auto;
     }
 
@@ -105,10 +111,13 @@ section#work {
     ul {
       li {
         margin: .5em 0;
+        padding-left: 1em;
+        position: relative;
 
         &::before {
-          position: relative;
-          bottom: .1em;
+          position: absolute;
+          top: -.1em;
+          left: 0;
           padding: 0 .3em;
           content: '›';
           // content: '・ ';
@@ -123,6 +132,10 @@ section#work {
 }
 
 footer {
+  @media (max-width: @big-break) {
+    font-size: 1.3em;
+  }
+
   padding: 1.5em 0 2em;
   font-size: 2em;
   text-align: center;
