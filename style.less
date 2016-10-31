@@ -1,29 +1,16 @@
 @base: #592059;
 @complement: #76852F;
 @neutral: #fff;
+@logo-scale: 4rem;
 
-@bg: darken(@base, 25);
+@bg: @neutral;
+@altbg: darken(@bg, 8);
 @anchor: lighten(@base, 20);
 @head: lighten(@complement, 10);
-@fg: fadeout(@neutral, 30);
+@fg: darken(@base, 25);
 
 @avatar-size: 4rem;
 @project-depth: 30%;
-
-.clearfix {
-  &::after {
-    content: '';
-    display: table;
-    clear: both;
-  }
-}
-
-.icon {
-  font-size: 1.5em !important;
-  display: inline-block;
-  vertical-align: -15%;
-  margin-right: .3em;
-}
 
 * {
   border: none;
@@ -31,6 +18,11 @@
   padding: 0;
   list-style: none;
   box-sizing: border-box;
+}
+
+body {
+  font-family: "Exo 2", sans-serif;
+  font-weight: 400;
 }
 
 a {
@@ -42,180 +34,106 @@ a {
   }
 }
 
-body {
-  background-color: @bg;
-  color: @fg;
-  font-family: 'Exo 2', sans-serif;
-  font-weight: 400;
-  max-width: 60em;
-  margin: 0 auto 2em;
+header {
+  color: @bg;
+  background-color: @complement;
+  text-align: center;
+  padding: @logo-scale 0;
 
-  h1, h2, h3, h4, h5 {
-    color: @head;
-    font-weight: 200;
-  }
-  
-  header, section {
-    .clearfix;
-    margin: 2rem 5%;
-    clear: both;
-  }
+  #logo {
+    font-size: @logo-scale;
+    padding: 0 0 @logo-scale/3;
+    // display: inline-block;
+    vertical-align: middle;
+    font-weight: bold;
 
-  header {
-    h1 {
-      font-size: 4em;
-      @media (max-width: 40em) {
-        font-size: 9.2vw;
-      }
-    }
-    p {
-      font-size: 1.2em;
-      padding: 0.3rem 0.6em;
+    .row {
+      display: block;
 
-      @media (max-width: 40em) {
-        font-size: 1em;
-        padding-left: .3em;
-      }
-
-      @media (max-width: 30em) {padding-left: 0}
-    }
-  }
-
-  section {
-    > article, > ul > li {
-      margin: .5em 0;
-    }
-  }
-
-  #games {
-    article {
-      border-radius: .3em;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center center;
-      overflow: hidden;
-      margin-top: .5em;
-      margin-bottom: 2.5em;
-      &:last-child {margin-bottom: 1.5em}
-
-      > a {
-        display: block;
-        position: relative;
-        background-color: fadeout(darken(@anchor, 35), 50);
-
-        div {
-          padding-top: 25%;
-          padding-bottom: 2rem;
-          width: 100%;
-
-          > * {
-            padding: .1rem .5rem .2rem;
-          }
-
-          h3 {
-            display: inline-block;
-            background-color: fadeout(@anchor, 10);
-            color: @bg;
-            font-size: 1.5em;
-          }
-
-          p {
-            width: 100%;
-            padding-top: .3rem;
-            padding-bottom: .4rem;
-            background-color: fadeout(@bg, 30);
-            color: @fg;
-          }
-        }
-
-        &:hover {
-          background-color: fadeout(@neutral, 80);
-
-          h3 {
-            background-color: fadeout(@neutral, 10);
-          }
-
-          p {
-            background-color: fadeout(@neutral, 30);
-            color: @bg;
-          }
-        }
-      }
-
-      &#ggj14 {background-image: url('games/ymir.jpg')}
-      &#ggj15 {background-image: url('games/business.jpg')}
-      &#ggj16 {background-image: url('games/ec.jpg')}
-    }
-  }
-
-  #staff {
-    > ul > li {
-      padding-left: @avatar-size;
-      margin-bottom: .7em;
-
-      &::before {
-        content: ' ';
-        margin-top: .7em;
-        width: @avatar-size;
-        height: @avatar-size;
-        border-radius: @avatar-size/2;
-        background-size: @avatar-size;
-        margin-left: -@avatar-size;
-        float: left;
-        background-color: fadeout(@fg, 30);
-      }
-
-      &#colons::before{background-image: url('staff/colons.png')}
-      &#euri::before{background-image: url('staff/euri.png')}
-      &#nced::before{background-image: url('staff/nced.png')}
-      &#okand::before{background-image: url('staff/okand.png')}
-      &#shillito::before{background-image: url('staff/peter.png')}
-
-      > * {
-        margin-left: 1rem;
-      }
-
-      h3 {
-        font-weight: 400;
-        padding-top: .3em;
-      }
-
-      p {
-        margin-top: .2em;
-        margin-bottom: .3em;
-      }
-
-      .contact {
-        span {
-          .icon;
-        }
-      }
-
-      @media (min-width: 50em) {
+      > span {
         display: inline-block;
-        width: 49%;
-        vertical-align: top;
-
-        &:nth-child(2n) {
-          float: right;
-        }
-
-        &:nth-child(2n+1) {
-          clear: both;
-          float: left;
+        width: @logo-scale * 1.35;
+        height: @logo-scale * 1.35;
+        margin: @logo-scale * 0.1;
+        background-color: @bg;
+        vertical-align: middle;
+        color: @complement;
+        border-radius: .2em;
+        
+        &.filler {
+          background: none;
         }
       }
     }
   }
 
-  footer {
-    text-align: center;
-    margin-bottom: 3em;
+  #name {
+    // display: inline-block;
+    margin: 0 auto;
+    vertical-align: middle;
+    font-weight: 400;
 
-    li {
-      span {
-        .icon;
+    span {
+      // display: block;
+      font-size: @logo-scale/2
+    }
+  }
+
+  #tagline {
+    font-size: @logo-scale/3;
+  }
+}
+
+section#work {
+  font-size: 1.5em;
+
+  article {
+    padding: 2em 1rem;
+
+    > * {
+      display: block;
+      max-width: 50rem;
+      margin: 2rem auto;
+    }
+
+    h3 {
+      font-weight: normal;
+      font-size: 1.5em;
+      text-transform: uppercase;
+    }
+
+    ul {
+      li {
+        margin: .5em 0;
+
+        &::before {
+          position: relative;
+          bottom: .1em;
+          padding: 0 .3em;
+          content: '›';
+          // content: '・ ';
+        }
       }
+    }
+
+    &:nth-child(2n) {
+      background-color: @altbg;
+    }
+  }
+}
+
+footer {
+  padding: 1.5em 0 2em;
+  font-size: 2em;
+  text-align: center;
+  border-top: .2em solid @altbg;
+
+  li {
+    display: inline-block;
+    padding: 0 .5em;
+
+    .fa {
+      padding-right: .3em;
     }
   }
 }
