@@ -46,7 +46,14 @@ header {
     font-size: 1em;
     text-align: left;
     vertical-align: top;
-    color: @neutral;
+
+    a {
+      color: @neutral;
+
+      &:hover {
+        color: @fg;
+      }
+    }
   }
 
   #logo {
