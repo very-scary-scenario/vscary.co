@@ -22,6 +22,18 @@
         <span>Scenario</span>
       </h1>
       <p id="tagline">totally legit, honest</p>
+
+      <script id="taglines" type="text/x-vscary-slogan-list">
+        totally legit, honest
+        if you're gonna do it, do it bad
+      </script>
+
+      <script>
+        var taglines = document.getElementById('taglines').innerText.match(/^\s+(\S+.*)$/gm);
+        document.getElementById('tagline').innerText = taglines[
+          Math.floor(Math.random() * taglines.length)
+        ].trim();
+      </script>
     </header>
 
     <section id="work">
