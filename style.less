@@ -13,6 +13,7 @@
 @project-depth: 30%;
 
 @big-break: 50rem;
+@little-break: 40rem;
 
 * {
   border: none;
@@ -31,7 +32,7 @@ a {
   text-decoration: none;
   color: @anchor;
 
-  &:hover {
+  &:hover, &:focus {
     color: @fg;
   }
 }
@@ -88,10 +89,10 @@ header {
 
 section#work {
   @media (max-width: @big-break) {
-    font-size: 1.3em;
+    font-size: 1.2em;
   }
 
-  font-size: 1.5em;
+  font-size: 1.4em;
 
   article {
     padding: 2em 1rem;
@@ -116,7 +117,7 @@ section#work {
       }
     }
 
-    ul {
+    ul.info {
       li {
         margin: .5em 0;
         padding-left: 1em;
@@ -130,6 +131,73 @@ section#work {
           content: '›';
           // content: '・ ';
         }
+      }
+    }
+
+    h3 {
+      font-weight: 300;
+      font-size: 1em;
+      text-transform: uppercase;
+      margin-bottom: 0;
+    }
+    ul.staff {
+      margin-top: 0;
+
+      &::after {
+        display: block;
+        content: ' ';
+        clear: both;
+      }
+
+      li {
+        display: block;
+        margin: .5em 1em 0 0;
+
+        @media (min-width: @little-break) {
+          display: inline-block;
+          margin-right: 0;
+
+          &:nth-child(2n) {
+            width: 50%;
+            float: right;
+          }
+          &:nth-child(2n+1) {
+            float: left;
+            clear: both;
+          }
+        }
+
+        a {
+          display: inline-block;
+
+          &::before {
+            content: ' ';
+            width: 2em;
+            height: 2em;
+            overflow: hidden;
+            border-radius: .3em;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            vertical-align: -55%;
+            display: inline-block;
+            margin-right: .5em;
+            transition: transform .2s;
+          }
+
+          &:focus::before, &:hover::before {
+            transform: scale(1.1);
+          }
+        }
+
+        &.colons a::before{background-image: url(staff/colons.png)}
+        &.digikerot a::before{background-image: url(staff/digikerot.png)}
+        &.euri a::before{background-image: url(staff/euri.png)}
+        &.homsar a::before{background-image: url(staff/homsar.png)}
+        &.krabbkaka a::before{background-image: url(staff/krabbkaka.png)}
+        &.nced a::before{background-image: url(staff/nced.png)}
+        &.okand a::before{background-image: url(staff/okand.png)}
+        &.peter a::before{background-image: url(staff/peter.png)}
       }
     }
 
