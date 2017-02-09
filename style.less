@@ -43,31 +43,16 @@ header {
   text-align: center;
   padding: @logo-scale .5em;
 
-  #logo {
-    font-size: @logo-scale;
-    padding: 0 0 @logo-scale/3;
-    // display: inline-block;
-    vertical-align: middle;
-    font-weight: 700;
-
-    .row {
-      display: block;
-
-      > span {
-        display: inline-block;
-        width: @logo-scale * 1.35;
-        height: @logo-scale * 1.35;
-        margin: @logo-scale * 0.1;
-        background-color: @bg;
-        vertical-align: middle;
-        color: @complement;
-        border-radius: .2em;
-        
-        &.filler {
-          background: none;
-        }
-      }
-    }
+  &::before {
+    content: ' ';
+    display: block;
+    width: 100%;
+    height: @logo-scale*2.9;
+    margin: 0.5em auto 1.8em;
+    background-image: url(logo.svg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 
   #name {
