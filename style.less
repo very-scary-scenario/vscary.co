@@ -136,7 +136,7 @@ section#work {
 
       li {
         display: block;
-        margin: .5em 1em 0 0;
+        margin: .7em 1em 0 0;
 
         @media (min-width: @little-break) {
           display: inline-block;
@@ -157,17 +157,19 @@ section#work {
 
           &::before {
             content: ' ';
-            width: 2em;
-            height: 2em;
+            width: 3em;
+            height: 3em;
             overflow: hidden;
             border-radius: .3em;
             background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
-            vertical-align: -55%;
+            vertical-align: middle;
             display: inline-block;
             margin-right: .5em;
             transition: transform .2s;
+            position: relative;
+            bottom: .1em;
           }
 
           &:focus::before, &:hover::before {

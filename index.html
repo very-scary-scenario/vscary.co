@@ -18,7 +18,6 @@
       <p id="tagline">totally legit, honest</p>
 
       <script id="taglines" type="text/x-vscary-slogan-list">
-        totally legit, honest
         if you're gonna do it, do it bad
         ånger translates to regret
         we're not monsters
@@ -26,6 +25,7 @@
 
       <script>
         var taglines = document.getElementById('taglines').innerText.match(/^\s+(\S+.*)$/gm);
+        taglines.push(document.getElementById('tagline').innerText);
         document.getElementById('tagline').innerText = taglines[
           Math.floor(Math.random() * taglines.length)
         ].trim();
