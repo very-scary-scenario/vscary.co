@@ -49,9 +49,9 @@
 
         <h3>Created by:</h3>
         <ul class="staff">
-          <li class="euri"><a href="https://twitter.com/EuricaeriS">Chris Walden</a></li>
           <li class="colons"><a href="https://twitter.com/mftb">colons</a></li>
           <li class="digikerot"><a href="https://twitter.com/digikerot">DiGiKerot</a></li>
+          <li class="euri"><a href="https://twitter.com/EuricaeriS">Chris Walden</a></li>
           <li class="okand"><a href="https://twitter.com/okand">Alexander Rennerfelt</a></li>
           <li class="peter"><a href="https://twitter.com/theshillito">Peter Shillito</a></li>
         </ul>
@@ -73,8 +73,8 @@
 
         <h3>Created by:</h3>
         <ul class="staff">
-          <li class="euri"><a href="https://twitter.com/EuricaeriS">Chris Walden</a></li>
           <li class="colons"><a href="https://twitter.com/mftb">colons</a></li>
+          <li class="euri"><a href="https://twitter.com/EuricaeriS">Chris Walden</a></li>
           <li class="homsar"><a href="https://twitter.com/h0m54r">Tachibana Kanade</a></li>
         </ul>
       </article>
@@ -98,8 +98,8 @@
 
         <h3>Created by:</h3>
         <ul class="staff">
-          <li class="euri"><a href="https://twitter.com/EuricaeriS">Chris Walden</a></li>
           <li class="colons"><a href="https://twitter.com/mftb">colons</a></li>
+          <li class="euri"><a href="https://twitter.com/EuricaeriS">Chris Walden</a></li>
           <li class="nced"><a href="https://twitter.com/Nick_Ed90">Nicholas Edwards</a></li>
           <li class="okand"><a href="https://twitter.com/okand">Alexander Rennerfelt</a></li>
           <li class="peter"><a href="https://twitter.com/theshillito">Peter Shillito</a></li>
@@ -129,8 +129,8 @@
 
         <h3>Created by:</h3>
         <ul class="staff">
-          <li class="euri"><a href="https://twitter.com/EuricaeriS">Chris Walden</a></li>
           <li class="colons"><a href="https://twitter.com/mftb">colons</a></li>
+          <li class="euri"><a href="https://twitter.com/EuricaeriS">Chris Walden</a></li>
           <li class="nced"><a href="https://twitter.com/Nick_Ed90">Nicholas Edwards</a></li>
           <li class="okand"><a href="https://twitter.com/okand">Alexander Rennerfelt</a></li>
           <li class="peter"><a href="https://twitter.com/theshillito">Peter Shillito</a></li>
@@ -155,8 +155,8 @@
 
         <h3>Created by:</h3>
         <ul class="staff">
-          <li class="euri"><a href="https://twitter.com/EuricaeriS">Chris Walden</a></li>
           <li class="colons"><a href="https://twitter.com/mftb">colons</a></li>
+          <li class="euri"><a href="https://twitter.com/EuricaeriS">Chris Walden</a></li>
           <li class="nced"><a href="https://twitter.com/Nick_Ed90">Nicholas Edwards</a></li>
           <li class="okand"><a href="https://twitter.com/okand">Alexander Rennerfelt</a></li>
         </ul>
@@ -179,5 +179,20 @@
         </a></li>
       </ul>
     </footer>
+
+    <script>
+      function shuffleStaffList(staffList) {
+        for (var si = staffList.children.length; si > 0; si--) {
+          staffList.appendChild(staffList.removeChild(
+            staffList.children[Math.floor(Math.random() * si)]
+          ));
+        }
+      }
+
+      var staffLists = document.querySelectorAll('ul.staff');
+      for (var gi = 0; gi < staffLists.length; gi++) {
+        shuffleStaffList(staffLists[gi]);
+      }
+    </script>
   </body>
 </html>
