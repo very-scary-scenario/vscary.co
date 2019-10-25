@@ -72,7 +72,7 @@ header {
   }
 }
 
-section#work {
+section {
   @media (max-width: @big-break) {
     font-size: 1.2em;
   }
@@ -102,7 +102,7 @@ section#work {
       }
     }
 
-    ul.info {
+    ul {
       li {
         margin: .5em 0;
         padding-left: 1em;
@@ -125,6 +125,36 @@ section#work {
       text-transform: uppercase;
       margin-bottom: 0;
     }
+  }
+}
+
+section#events {
+  background-color: @altbg;
+
+  article {
+    .cta {
+      font-size: 1.2em;
+      display: inline-block;
+      color: @bg;
+      background-color: @anchor;
+      padding: .2em .7em .3em;
+      border-radius: .2em;
+
+      &:hover, &:focus {
+        color: @bg;
+        background-color: @fg;
+      }
+
+      &::after {
+        content: "»";
+        padding-left: .2em;
+      }
+    }
+  }
+}
+
+section#work {
+  article {
     ul.staff {
       margin-top: 0;
 
